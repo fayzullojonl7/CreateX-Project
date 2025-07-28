@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const HoverSquare = ({ backgroundImage, logo ,title, description}) => {
+const HoverSquare = ({ backgroundImage, logo, title, description }) => {
     const [isHovered, setIsHovered] = useState(false);
 
     const handleMouseEnter = () => setIsHovered(true);
@@ -10,15 +10,18 @@ const HoverSquare = ({ backgroundImage, logo ,title, description}) => {
         <div
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
-            className={`shadow-lg rounded-[5px] w-[300px] h-[300px] transition-all duration-500 bg-white bg-cover bg-center`}
+            className={`overflow-hidden shadow-lg rounded-[5px] w-[300px] h-[300px] transition-all duration-500 bg-white bg-cover bg-center`}
             style={{
                 backgroundImage: isHovered ? `url(${backgroundImage})` : 'none',
             }}
         >
-            <img src={logo} alt="" />
-            <h1>{title}</h1>
-            <p>{description}</p>
-            <div className='flex gap-[5px]'>
+            <div className='w-[100%] h-[100%] backdrop-'>
+                <img src={logo} alt="" />
+                <h1>{title}</h1>
+                <p>{description}</p>
+                <div className='flex gap-[5px]'>
+
+                </div>
             </div>
         </div>
     );

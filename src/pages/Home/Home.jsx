@@ -165,9 +165,9 @@ const Home = () => {
         </div>
         <img data-aos='zoom-in' src={HeroN4} className='mt-[20px] lg:w-[400px]' alt="" />
       </section>
-      <section className=' dark:bg-[#1E212C] bg-[#E5E8ED] lg:px-[150px]'>
-        <div className='flex justify-between pt-[80px] pb-[30px]'>
-          <h1 className='font-bold text-[35px]'>
+      <section className=' dark:bg-[#1E212C] bg-[#E5E8ED] px-[20px] lg:px-[150px]'>
+        <div className='flex justify-between items-center  pt-[30px] lg:pt-[80px] pb-[30px]'>
+          <h1 className=' font-bold text-[25px] lg:text-[35px]'>
             Read our clients' case studies
           </h1>
           <div className='flex'>
@@ -181,12 +181,11 @@ const Home = () => {
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
               </svg>
-
             </button>
 
           </div>
         </div>
-        <div className='flex flex-wrap lg:justify-between justify-center gap-[20px]'>
+        <div className='flex flex-wrap lg:justify-between justify-center gap-[20px] py-[30px]'>
           <HoverSquare />
           <HoverSquare backgroundImage={HoverSquareBg} />
           <HoverSquare />

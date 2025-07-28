@@ -127,7 +127,7 @@ const Layout = () => {
                             <div className='flex gap-[20px] mt-[40px]'>
                                 <TransparentBtn enterence="Get a free analysis" />
                                 <div className='flex gap-[15px] items-center '>
-                                    <RoundButton />
+                                    <RoundButton  />
                                     <p className='text-white font-bold'>Play video</p>
                                 </div>
                             </div>
