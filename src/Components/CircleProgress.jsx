@@ -53,6 +53,7 @@ const CircularProgress = ({ percentage = 75, duration = 1.5, color = "#3b82f6" }
       <div className="absolute text-[35px] font-bold text-black dark:text-white">{progress}</div>
     </div>
   )
+  
 }
 
 
