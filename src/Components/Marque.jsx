@@ -4,7 +4,7 @@ const Marquee = ({ logos }) => {
   const doubledLogos = [...logos, ...logos]
 
   return (
-    <div className="relative w-full overflow-hidden bg-black py-2">
+    <div className="relative w-full overflow-hidden py-2">
       <div
         className="flex items-center gap-6 sm:gap-8 h-full animate-marquee"
         style={{
