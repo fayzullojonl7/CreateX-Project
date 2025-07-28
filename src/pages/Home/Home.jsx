@@ -228,7 +228,7 @@ const Home = () => {
         </section>
         <section className='px-[20px] lg:px-[150px] py-[50px]'>
           <h1 className='text-[35px] text-center mb-[30px] font-bold'>Our benefits</h1>
-          <div className='flex flex-wrap justify-center items-center lg:justify-between'>
+          <div className='flex flex-wrap justify-center items-center gap-[20px] lg:justify-between'>
             <div className='flex flex-col gap-[20px]'>
               <article className='text-center px-[40px] py-[40px] items-center flex flex-col justify-between w-[300px] hover:shadow-lg dark:shadow-[#ffffff38] shadow-gray-600  h-[200px] rounded-[4px] border-[1px] dark:border-gray-700 border-[#E5E8ED]'>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6 text-[#7772F1]">
