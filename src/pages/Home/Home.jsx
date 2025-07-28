@@ -165,7 +165,7 @@ const Home = () => {
         </div>
         <img data-aos='zoom-in' src={HeroN4} className='mt-[20px] lg:w-[400px]' alt="" />
       </section>
-      <section className=' dark:bg-[#1E212C] bg-[#E5E8ED] px-[150px]'>
+      <section className=' dark:bg-[#1E212C] bg-[#E5E8ED] lg:px-[150px]'>
         <div className='flex justify-between pt-[80px] pb-[30px]'>
           <h1 className='font-bold text-[35px]'>
             Read our clients' case studies
