@@ -186,7 +186,7 @@ const Home = () => {
 
           </div>
         </div>
-        <div className='flex flex-wrap justify-between'>
+        <div className='flex flex-wrap lg:justify-between justify-center gap-[20px]'>
           <HoverSquare />
           <HoverSquare backgroundImage={HoverSquareBg} />
           <HoverSquare />
