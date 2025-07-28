@@ -55,4 +55,6 @@ const CircularProgress = ({ percentage = 75, duration = 1.5, color = "#3b82f6" }
   )
 }
 
+
+
 export default CircularProgress
