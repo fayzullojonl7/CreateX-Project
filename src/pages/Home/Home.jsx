@@ -26,16 +26,23 @@ import HeroN4 from "./Media/Photo/HeroN4.png"
 import HoverSquare from '../../Components/HoverSquare'
 import HoverSquareBg from "./Media/Photo/hoverSquareBg.png"
 ////////////////////////////////////////////
-
+import 'swiper/css';
+import 'swiper/css/effect-coverflow';
+import 'swiper/css/pagination';
+import './styles.css';
+import { EffectCoverflow, Pagination } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import Marquee from '../../Components/Marque'
 
 const Home = () => {
+  const logos = [inDepthLogo, higherFitLogo, sentialLogo, happyHomeLogo, ForSaleLogo, sunsetSealityLogo]
   useEffect(() => {
     Aos.init()
   }, [])
   return (
     <div className='dark:bg-black dark:text-white'>
       <section className='px-[20px] py-[20px] lg:px-[150px] lg:py-[80px]'>
-        <div className='flex flex-wrap lg:justify-between'>
+        <div className='flex mb-[40px] lg:mb-[100px] flex-wrap lg:justify-between'>
           <p data-aos='zoom-in' className='lg:w-[420px] text-[20px] font-bold mb-[20px]'>Createx SEO Agency is a full-service digital marketing agency. We-help businesses make more money through a-wealth of-performance data and market research. Wecreate science-based SEO strategies toempower our clients.</p>
           <div className='flex flex-wrap lg:w-[550px] gap-[15px] justify-center'>
             <div data-aos='zoom-in' className='flex items-center gap-[10px] h-[80px]'>
@@ -56,14 +63,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div className='flex flex-wrap lg:justify-between justify-center mt-[30px] lg:mt-[200px]'>
-          <img data-aos='zoom-in' src={inDepthLogo} alt="" />
-          <img data-aos='zoom-in' src={higherFitLogo} alt="" />
-          <img data-aos='zoom-in' src={sentialLogo} alt="" />
-          <img data-aos='zoom-in' src={happyHomeLogo} alt="" />
-          <img data-aos='zoom-in' src={ForSaleLogo} alt="" />
-          <img data-aos='zoom-in' src={sunsetSealityLogo} alt="" />
-        </div>
+        <Marquee logos={logos} />
       </section>
       <section className='Section2'>
         <div className='flex items-center flex-wrap px-[20px] py-[20px] lg:px-[150px] justify-between'>
@@ -77,19 +77,19 @@ const Home = () => {
         <div data-aos='zoom-in' className='flex flex-wrap justify-center gap-[30px] py-[50px] mt-[30px]'>
           <div className='text-center flex flex-col gap-[20px]'>
             <CircularProgress percentage="10" color='#F89828' />
-            <p className='text-[#424551]'>Years of experience</p>
+            <p className='text-[#424551]  dark:text-gray-400'>Years of experience</p>
           </div>
           <div className='text-center flex flex-col gap-[20px]'>
             <CircularProgress percentage="45" color='#F52F6E' />
-            <p className='text-[#424551]'>Awards</p>
+            <p className='text-[#424551]  dark:text-gray-400'>Awards</p>
           </div>
           <div className='text-center flex flex-col gap-[20px]'>
             <CircularProgress percentage="540" color='#5A87FC' />
-            <p className='text-[#424551]'>Projects</p>
+            <p className='text-[#424551]  dark:text-gray-400'>Projects</p>
           </div>
           <div className='text-center flex flex-col gap-[20px]'>
             <CircularProgress percentage="100" color='#03CEA4' />
-            <p className='text-[#424551]'>Happy clients</p>
+            <p className='text-[#424551]  dark:text-gray-400'>Happy clients</p>
           </div>
         </div>
         <section className='lg:px-[150px] px-[20px] py-[40px]'>
@@ -101,28 +101,28 @@ const Home = () => {
               <div className='flex flex-col gap-[20px]'>
                 <div data-aos='zoom-in' className='flex gap-[10px] '>
                   <CheckIcon className='w-[20px] text-[#7772F1]' />
-                  <p className='text-[#424551]'>Aenean enim tellus morbi nisl vulputate dictumst.</p>
+                  <p className='text-[#424551]  dark:text-gray-400'>Aenean enim tellus morbi nisl vulputate dictumst.</p>
                 </div>
                 <div data-aos='zoom-in' className='flex gap-[10px] '>
                   <CheckIcon className='w-[20px] text-[#7772F1]' />
-                  <p className='text-[#424551]'>Vel in amet, placerat adipiscing est pharetra.</p>
+                  <p className='text-[#424551]  dark:text-gray-400'>Vel in amet, placerat adipiscing est pharetra.</p>
                 </div>
                 <div data-aos='zoom-in' className='flex gap-[10px] '>
                   <CheckIcon className='w-[20px] text-[#7772F1]' />
-                  <p className='text-[#424551]'>Gravida ornare sit in et ut sit sem id.</p>
+                  <p className='text-[#424551]  dark:text-gray-400'>Gravida ornare sit in et ut sit sem id.</p>
                 </div>
                 <div data-aos='zoom-in' className='flex gap-[10px] '>
                   <CheckIcon className='w-[20px] text-[#7772F1]' />
-                  <p className='text-[#424551]'>Ultrices pellentesque dictum enim egestas ac diam.</p>
+                  <p className='text-[#424551]  dark:text-gray-400'>Ultrices pellentesque dictum enim egestas ac diam.</p>
                 </div>
 
                 <div data-aos='zoom-in' className='flex gap-[10px] '>
                   <CheckIcon className='w-[20px] text-[#7772F1]' />
-                  <p className='text-[#424551]'>Sit semper enim senectus integer ut turpis et.</p>
+                  <p className='text-[#424551]  dark:text-gray-400'>Sit semper enim senectus integer ut turpis et.</p>
                 </div>
                 <div data-aos='zoom-in' className='flex gap-[10px] '>
                   <CheckIcon className='w-[20px] text-[#7772F1]' />
-                  <p className='text-[#424551]'>Nibh sapien volutpat lacus augue.</p>
+                  <p className='text-[#424551]  dark:text-gray-400'>Nibh sapien volutpat lacus augue.</p>
                 </div>
               </div>
               <div data-aos='zoom-in' className='flex gap-[20px]'>
@@ -133,64 +133,101 @@ const Home = () => {
             <img data-aos='zoom-in' className='lg:w-[500px] lg:h-[320px] mt-[20px]' src={chartN1} alt="" />
           </div>
         </section>
-      </section>
-      <section className='py-[50px] px-[20px] lg:px-[150px] bg-[#1E212C] flex flex-wrap  lg:justify-between'>
-        <img data-aos='zoom-in' className='mb-[20px]' src={HeroN3} alt="" />
-        <div className='lg:w-[500px] flex flex-col gap-[50px] text-white'>
-          <h1 data-aos='zoom-in' className='text-[35px] font-bold'>Get a Free SEO Analysis!</h1>
-          <div className='flex flex-wrap gap-[25px] lg:w-[500px]'>
-            <input data-aos='zoom-in' type="text" className='w-[100%] lg:w-[47%] border h-[40px] border-[#FFFFFF33] border-[1px] rounded-[5px] bg-[#FFFFFF1F]' name="" id="" />
-            <input data-aos='zoom-in' type="text" className='w-[100%] lg:w-[47%] border h-[40px] border-[#FFFFFF33] border-[1px] rounded-[5px] bg-[#FFFFFF1F]' name="" id="" />
-            <input data-aos='zoom-in' type="text" className='w-[100%] lg:w-[100%] border h-[40px] border-[#FFFFFF33] border-[1px] rounded-[5px] bg-[#FFFFFF1F]' name="" id="" />
-          </div>
-          <div className='flex flex-wrap justify-between'>
-            <div className='flex gap-[15px]'>
-              <input data-aos='zoom-in' type="checkbox" />
-              <p data-aos='zoom-in' className='lg:w-[250px]'>I agree to receive communications from Createx SEO Agency</p>
+        <section className='py-[50px] px-[20px] lg:px-[150px] bg-[#1E212C] flex flex-wrap  lg:justify-between'>
+          <img data-aos='zoom-in' className='mb-[20px]' src={HeroN3} alt="" />
+          <div className='lg:w-[500px] flex flex-col gap-[50px] text-white'>
+            <h1 data-aos='zoom-in' className='text-[35px] font-bold'>Get a Free SEO Analysis!</h1>
+            <div className='flex flex-wrap gap-[25px] lg:w-[500px]'>
+              <label htmlFor="inp1" className='flex lg:hidden'>Name</label>
+              <input data-aos='zoom-in' placeholder='Your name' type="text" className='inp1 pl-[10px] w-[100%] lg:w-[47%] h-[40px] border-[#FFFFFF33] border-[1px] rounded-[5px] bg-[#FFFFFF1F]' name="" id="" />
+              <label htmlFor="inp2" className='flex lg:hidden'>Email</label>
+              <input data-aos='zoom-in' placeholder='Your working email' type="text" className='inp2 w-[100%] pl-[10px] lg:w-[47%] h-[40px] border-[#FFFFFF33] border-[1px] rounded-[5px] bg-[#FFFFFF1F]' name="" id="" />
+              <label htmlFor="inp3" className='flex lg:hidden'>Your website URL</label>
+              <input data-aos='zoom-in' placeholder='http://yoursite.com' type="text" className='inp3 w-[100%] pl-[10px] lg:w-[100%]  h-[40px] border-[#FFFFFF33] border-[1px] rounded-[5px] bg-[#FFFFFF1F]' name="" id="" />
             </div>
-            <BlueButton enterence={"Get a free analysis"} />
+            <div className='flex flex-wrap gap-[15px] lg:gap-[5px] justify-between'>
+              <div className='flex gap-[15px] items-center'>
+                <input data-aos='zoom-in' type="checkbox" className='w-[20px] h-[20px]' />
+                <p data-aos='zoom-in' className='lg:w-[250px]'>I agree to receive communications from Createx SEO Agency</p>
+              </div>
+              <BlueButton enterence={"Get a free analysis"} />
+            </div>
           </div>
-        </div>
-      </section>
-      <section className='lg:py-[100px] px-[20px] py-[20px] lg:px-[150px] flex flex-wrap justify-between items-center'>
-        <div className='flex flex-col gap-[40px]'>
-          <h1 data-aos='zoom-in' className='text-[35px] font-bold'>Freequently Ask Questions</h1>
-          <div>
-            <ExpandableDiv title={"Aliquet lectus urna viverra in odio?"} description={"Adipiscing nunc arcu enim elit mattis eu placerat proin. Imperdiet elementum faucibus dignissim purus. Fusce parturient diam magna ullamcorper morbi semper massa ac facilisis."} />
-            <ExpandableDiv title={"Orci commodo, viverra orci mollis ut euismod?"} description={"Adipiscing nunc arcu enim elit mattis eu placerat proin. Imperdiet elementum faucibus dignissim purus. Fusce parturient diam magna ullamcorper morbi semper massa ac facilisis."} />
-            <ExpandableDiv title={"Sagittis vitae facilisi rutrum amet mauris quisque vel convallis?"} description={"Adipiscing nunc arcu enim elit mattis eu placerat proin. Imperdiet elementum faucibus dignissim purus. Fusce parturient diam magna ullamcorper morbi semper massa ac facilisis."} />
-            <ExpandableDiv title={"In id dolor quis nunc, urna hendrerit pharetra?"} description={"Adipiscing nunc arcu enim elit mattis eu placerat proin. Imperdiet elementum faucibus dignissim purus. Fusce parturient diam magna ullamcorper morbi semper massa ac facilisis."} />
+        </section>
+        <section className='lg:py-[100px] px-[20px] py-[20px] lg:px-[150px] flex flex-wrap justify-between items-center'>
+          <div className='flex flex-col gap-[40px]'>
+            <h1 data-aos='zoom-in' className='text-[35px] font-bold'>Freequently Ask Questions</h1>
+            <div>
+              <ExpandableDiv title={"Aliquet lectus urna viverra in odio?"} description={"Adipiscing nunc arcu enim elit mattis eu placerat proin. Imperdiet elementum faucibus dignissim purus. Fusce parturient diam magna ullamcorper morbi semper massa ac facilisis."} />
+              <ExpandableDiv title={"Orci commodo, viverra orci mollis ut euismod?"} description={"Adipiscing nunc arcu enim elit mattis eu placerat proin. Imperdiet elementum faucibus dignissim purus. Fusce parturient diam magna ullamcorper morbi semper massa ac facilisis."} />
+              <ExpandableDiv title={"Sagittis vitae facilisi rutrum amet mauris quisque vel convallis?"} description={"Adipiscing nunc arcu enim elit mattis eu placerat proin. Imperdiet elementum faucibus dignissim purus. Fusce parturient diam magna ullamcorper morbi semper massa ac facilisis."} />
+              <ExpandableDiv title={"In id dolor quis nunc, urna hendrerit pharetra?"} description={"Adipiscing nunc arcu enim elit mattis eu placerat proin. Imperdiet elementum faucibus dignissim purus. Fusce parturient diam magna ullamcorper morbi semper massa ac facilisis."} />
+            </div>
+            <BlueButton enterence={"Discover more"} />
           </div>
-          <BlueButton enterence={"Discover more"} />
-        </div>
-        <img data-aos='zoom-in' src={HeroN4} className='mt-[20px] lg:w-[400px]' alt="" />
-      </section>
-      <section className=' dark:bg-[#1E212C] bg-[#E5E8ED] px-[20px] lg:px-[150px]'>
-        <div className='flex justify-between items-center  pt-[30px] lg:pt-[80px] pb-[30px]'>
-          <h1 className=' font-bold text-[25px] lg:text-[35px]'>
-            Read our clients' case studies
-          </h1>
-          <div className='flex'>
-            <button className='w-[45px] h-[45px] rounded-full active:bg-[#7772F1] active:text-[white] flex justify-center items-center'>
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
-              </svg>
+          <img data-aos='zoom-in' src={HeroN4} className='mt-[20px] lg:w-[400px]' alt="" />
+        </section>
+        <section className=' dark:bg-[#1E212C] bg-[#E5E8ED] px-[20px] lg:px-[150px]'>
+          <div className='flex justify-between items-center  pt-[30px] lg:pt-[80px] pb-[30px]'>
+            <h1 className=' font-bold text-[25px] lg:text-[35px]'>
+              Read our clients' case studies
+            </h1>
+            <div className='hidden lg:flex'>
+              <button classNlame='w-[45px] h-[45px] rounded-full active:bg-[#7772F1] active:text-[white] flex justify-center items-center'>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+                </svg>
 
-            </button>
-            <button className='w-[45px] h-[45px] rounded-full active:bg-[#7772F1] active:text-[white] flex justify-center items-center'>
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-              </svg>
-            </button>
+              </button>
+              <button className='w-[45px] h-[45px] rounded-full active:bg-[#7772F1] active:text-[white] flex justify-center items-center'>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                </svg>
+              </button>
+
+            </div>
+          </div>
+          <div className='flex flex-wrap lg:justify-between justify-center gap-[20px] py-[30px]'>
+            <Swiper
+              effect={'coverflow'}
+              grabCursor={true}
+              centeredSlides={true}
+              slidesPerView={'auto'}
+              coverflowEffect={{
+                rotate: 50,
+                stretch: 0,
+                depth: 100,
+                modifier: 1,
+                slideShadows: true,
+              }}
+              pagination={true}
+              modules={[EffectCoverflow, Pagination]}
+              className="mySwiper"
+            >
+              <SwiperSlide>
+                <HoverSquare logo={sentialLogo} title={"Charity organisation"} description={"Createx SEO Agency helped National Inc. increase their MQL to SQL conversion rate by 300%."} />
+              </SwiperSlide>
+              <SwiperSlide>
+                <HoverSquare backgroundImage={HoverSquareBg} logo={ForSaleLogo} title={"Oil and natural resources"} description={"With an advanced A/B testing and usability analysis, Createx SEO Agency helps Del Mar see a 400% increase in conversion rate."} />
+              </SwiperSlide>
+              <SwiperSlide>
+                <HoverSquare logo={sunsetSealityLogo} title={"Personal care"} description={"We helped Sunset company break through a noisy industry and better understand their buyer's journey."} />
+              </SwiperSlide>
+              <SwiperSlide>
+                <HoverSquare logo={sentialLogo} title={"Charity organisation"} description={"Createx SEO Agency helped National Inc. increase their MQL to SQL conversion rate by 300%."} />
+              </SwiperSlide>
+              <SwiperSlide>
+                <HoverSquare backgroundImage={HoverSquareBg} logo={ForSaleLogo} title={"Oil and natural resources"} description={"With an advanced A/B testing and usability analysis, Createx SEO Agency helps Del Mar see a 400% increase in conversion rate."} />
+              </SwiperSlide>
+              <SwiperSlide>
+                <HoverSquare logo={sunsetSealityLogo} title={"Personal care"} description={"We helped Sunset company break through a noisy industry and better understand their buyer's journey."} />
+              </SwiperSlide>
+            </Swiper>
 
           </div>
-        </div>
-        <div className='flex flex-wrap lg:justify-between justify-center gap-[20px] py-[30px]'>
-          <HoverSquare />
-          <HoverSquare backgroundImage={HoverSquareBg} />
-          <HoverSquare />
-        </div>
+        </section>
       </section>
+
     </div>
   )
 }

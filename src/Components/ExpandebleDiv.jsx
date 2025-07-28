@@ -19,7 +19,7 @@ const ExpandableDiv = ({ title, description }) => {
             </div>
             <div
                 className={`overflow-hidden transition-all duration-500 transform ${isExpanded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-[-20px]'}`}>
-                {isExpanded && <p className="p-2 text-[#787A80]">{description}</p>}
+                {isExpanded && <p className="p-2 text-[#787A80]  dark:text-gray-400">{description}</p>}
             </div>
         </div>
     );

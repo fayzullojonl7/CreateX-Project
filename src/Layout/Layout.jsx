@@ -6,12 +6,12 @@ import BlueButton from '../Components/BlueButton'
 import TransparentBtn from '../Components/transparentBtn'
 import RoundButton from '../Components/RoundBtn'
 import HeroN1 from "../pages/Home/Media/Photo/HeroN1.png"
-import { ArrowRightIcon, ChartBarIcon, ComputerDesktopIcon, DevicePhoneMobileIcon, HomeIcon, MegaphoneIcon } from '@heroicons/react/24/solid'
-import { ArrowSmallRightIcon, PhoneIcon } from '@heroicons/react/20/solid'
+import { ChartBarIcon, ComputerDesktopIcon, DevicePhoneMobileIcon, HomeIcon, MegaphoneIcon } from '@heroicons/react/24/solid'
 import { Switch } from 'antd'
 import useDarkSide from '../config/useDarkMode'
-
+import BasicMenu from '../Components/miniMenu'
 const Layout = () => {
+
     let [, toggleTheme] = useDarkSide()
     const location = useLocation()
     const path = location.pathname
@@ -120,14 +120,16 @@ const Layout = () => {
             )
         } else {
             return (
-                <div className='w-[100%] h-[550px] mt-[120px] flex flex-col justify-between items-center'>
+                <div className='w-[100%] h-[550px] mt-[50px] lg:mt-[120px] flex flex-col justify-between items-center'>
                     <div className='flex flex-wrap '>
                         <div className='text-start'>
                             <h1 className='text-[30px] lg:text-[55px] lf:text-[50px] font-bold lg:w-[600px] text-white'>Best <span className='text-[#645fed]'>SEO & Marketing</span> Solutions for You</h1>
                             <div className='flex gap-[20px] mt-[40px]'>
-                                <TransparentBtn enterence="Get a free analysis" />
+                                <div className='hidden lg:flex'>
+                                    <TransparentBtn enterence="Get a free analysis" />
+                                </div>
                                 <div className='flex gap-[15px] items-center '>
-                                    <RoundButton  />
+                                    <RoundButton />
                                     <p className='text-white font-bold'>Play video</p>
                                 </div>
                             </div>
@@ -177,7 +179,12 @@ const Layout = () => {
                         </Link>
                     </ul>
                     <Switch defaultChecked onChange={toggleTheme} />
-                    <BlueButton enterence={"Talk to a human"} />
+                    <div className='hidden lg:flex'>
+                        <BlueButton enterence={"Talk to a human"} />
+                    </div>
+                    <div className='lg:hidden'>
+                        <BasicMenu />
+                    </div>
                 </nav>
                 <div className='text-center'>
                     {renderHeaderContent()}
@@ -186,11 +193,12 @@ const Layout = () => {
             <main>
                 <Outlet />
             </main>
-            <footer className='py-[100px]'>
+            <footer className=' py-[100px]'>
                 <h1>
                     Car Configurator © 2023
                 </h1>
             </footer>
+
         </>
     )
 }

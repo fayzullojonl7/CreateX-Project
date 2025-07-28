@@ -4,7 +4,7 @@ import { useInView } from 'react-intersection-observer'
 const CircularProgress = ({ percentage = 75, duration = 1.5, color = "#3b82f6" }) => {
   const radius = 70
   const strokeWidth = 6
-  const normalizedRadius = radius - strokeWidth * 0.5
+  const normalizedRadius = radius - strokeWidth *  0.5
   const circumference = normalizedRadius * 2 * Math.PI
 
   const [progress, setProgress] = useState(0)
