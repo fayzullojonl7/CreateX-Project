@@ -157,7 +157,7 @@ const Layout = () => {
     return (
         <>
             <header className='px-[20px] py-[20px] lg:px-[150px] lg:py-[50px]'>
-                <nav className='flex justify-between w-[350px] lg:w-[1000px] z-1000 items-center fixed top-[20px]'>
+                <nav className='flex justify-between w-[373px] lg:w-[1000px] z-1000 items-center fixed top-[20px]'>
                     <Link to={''}>
                         <img className='w-[110px] h-[20px]' src={logo} alt="" />
                     </Link>
