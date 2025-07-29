@@ -29,14 +29,22 @@ import HeroN5 from "./Media/Photo/HeroN5.png"
 ////////////////////////////////////////////
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
+import 'swiper/css/effect-cards';
 import 'swiper/css/pagination';
 import './styles.css';
 import { EffectCoverflow, Pagination } from 'swiper/modules';
+import { EffectCards } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Marquee from '../../Components/Marque'
+import PricingCard from '../../Components/PricingCard'
 
 const Home = () => {
   const logos = [inDepthLogo, higherFitLogo, sentialLogo, happyHomeLogo, ForSaleLogo, sunsetSealityLogo]
+  const plans = [
+    { plan: 'Basic', price: 24 },
+    { plan: 'Pro', price: 48 },
+    { plan: 'Business', price: 96 },
+  ]
   useEffect(() => {
     Aos.init()
   }, [])
@@ -185,7 +193,6 @@ const Home = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
                 </svg>
               </button>
-
             </div>
           </div>
           <div className='flex flex-wrap lg:justify-between justify-center gap-[20px] py-[30px]'>
@@ -255,7 +262,7 @@ const Home = () => {
               </article>
             </div>
             <img src={HeroN5} className='w-[300px] h-[400px]' alt="" />
-           <div className='flex flex-col gap-[20px]'>
+            <div className='flex flex-col gap-[20px]'>
               <article className='text-center px-[40px] py-[40px] items-center flex flex-col justify-between w-[300px] hover:shadow-lg dark:shadow-[#ffffff38] shadow-gray-600  h-[200px] rounded-[4px] border-[1px] dark:border-gray-700 border-[#E5E8ED]'>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6 text-[#7772F1]">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M12 18.75a6 6 0 0 0 6-6v-1.5m-6 7.5a6 6 0 0 1-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 0 1-3-3V4.5a3 3 0 1 1 6 0v8.25a3 3 0 0 1-3 3Z" />
@@ -280,6 +287,27 @@ const Home = () => {
               </article>
             </div>
           </div>
+        </section>
+        <section className='px-[20px] flex lg:hidden'>
+          <Swiper
+            effect={'cards'}
+            grabCursor={true}
+            modules={[EffectCards]}
+            className="mySwiper"
+          >
+ {plans.map(({ plan, price }, idx) => (
+        <SwiperSlide key={idx}>
+          {({ isActive }) => (
+            <PricingCard plan={plan} price={price} isActive={isActive} />
+          )}
+        </SwiperSlide>
+      ))}
+          </Swiper>
+        </section>
+        <section className='hidden lg:flex justify-between px-[150px]'>
+          <PricingCard plan={"Basic"} price={"24"} />
+          <PricingCard plan={"Basic"} price={"24"} />
+          <PricingCard plan={"Basic"} price={"24"} />
         </section>
       </section>
 
