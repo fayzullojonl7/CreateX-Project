@@ -288,7 +288,7 @@ const Home = () => {
             </div>
           </div>
         </section>
-        <section className='px-[20px] flex lg:hidden'>
+        <section className='px-[20px] flex lg:hidden py-[50px]'>
           <Swiper
             effect={'cards'}
             grabCursor={true}
