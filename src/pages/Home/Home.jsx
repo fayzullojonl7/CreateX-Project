@@ -288,7 +288,7 @@ const Home = () => {
             </div>
           </div>
         </section>
-        <section className='px-[20px] flex lg:hidden py-[50px]'>
+        <section className='px-[20px] flex lg:hidden py-[50px] overflow-hidden'>
           <Swiper
           data-aos='zoom-in'
             effect={'cards'}
