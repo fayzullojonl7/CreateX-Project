@@ -93,7 +93,7 @@ const Home = () => {
             <p className='text-[#424551]  dark:text-gray-400'>Awards</p>
           </div>
           <div className='text-center flex flex-col gap-[20px]'>
-            <CircularProgress percentage="540" color='#5A87FC' />
+            <CircularProgress percentage="86" color='#5A87FC' />
             <p className='text-[#424551]  dark:text-gray-400'>Projects</p>
           </div>
           <div className='text-center flex flex-col gap-[20px]'>
