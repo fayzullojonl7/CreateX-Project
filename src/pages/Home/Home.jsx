@@ -295,13 +295,13 @@ const Home = () => {
             modules={[EffectCards]}
             className="mySwiper"
           >
- {plans.map(({ plan, price }, idx) => (
-        <SwiperSlide key={idx}>
-          {({ isActive }) => (
-            <PricingCard plan={plan} price={price} isActive={isActive} />
-          )}
-        </SwiperSlide>
-      ))}
+            {plans.map(({ plan, price }, idx) => (
+              <SwiperSlide key={idx}>
+                {({ isActive }) => (
+                  <PricingCard plan={plan} price={price} isActive={isActive} />
+                )}
+              </SwiperSlide>
+            ))}
           </Swiper>
         </section>
         <section className='hidden lg:flex justify-between px-[150px]'>
