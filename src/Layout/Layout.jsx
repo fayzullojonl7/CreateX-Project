@@ -120,7 +120,7 @@ const Layout = () => {
             )
         } else {
             return (
-                <div className='w-[100%] h-[550px] mt-[50px] lg:mt-[120px] flex flex-col justify-between items-center'>
+                <div className='w-[100%] h-[550px] lg:mt-[120px] flex flex-col justify-between items-center'>
                     <div className='flex flex-wrap '>
                         <div className='text-start'>
                             <h1 className='text-[30px] lg:text-[55px] lf:text-[50px] font-bold lg:w-[600px] text-white'>{words.best} <span className='text-[#645fed]'>{words.seoMarketing}</span> {words.SolutionsForYou}</h1>
@@ -156,53 +156,51 @@ const Layout = () => {
     }
     return (
         <>
-          <header className="px-5  lg:px-[150px] lg:py-[50px]">
-  <nav className="fixed left-0 right-0 z-[1000]">
-    <div className="max-w-[1000px] mx-auto flex items-center justify-between px-4 py-3 bg-[#1E212C]/80 backdrop-blur-md lg:rounded-2xl shadow-lg transition-all duration-300">
-      
-      {/* ЛОГО */}
-      <Link to={'/'}>
-        <img src={logo} alt="Logo" className="w-[110px] h-[20px]" />
-      </Link>
+            <header className="px-5 lg:px-[150px] lg:py-[50px]">
+                <nav className="fixed left-0 right-0 z-[1000]">
+                    <div className="max-w-[1000px] mx-auto flex items-center justify-between px-4 py-3 bg-[#1E212C]/80 backdrop-blur-md lg:rounded-2xl shadow-lg transition-all duration-300">
 
-      {/* НАВИГАЦИЯ */}
-      <ul className="hidden lg:flex gap-10 text-white text-[16px]">
-        <Link to="/services"><p>{words.services}</p></Link>
-        <Link to=""><p>{words.caseStudies}</p></Link>
-        <Link to="/about"><p>{words.aboutUs}</p></Link>
-        <Link to=""><p>{words.blog}</p></Link>
-        <Link to=""><p>{words.contacts}</p></Link>
-      </ul>
+                        <Link to={'/'}>
+                            <img src={logo} alt="Logo" className="w-[110px] h-[20px]" />
+                        </Link>
 
-      {/* СМЕНА ЯЗЫКА */}
-      <select
-        className="hidden lg:flex text-white bg-transparent"
-        value={i18n.language}
-        onChange={(e) => i18n.changeLanguage(e.target.value)}
-      >
-        <option value="en">EN</option>
-        <option value="ru">RU</option>
-        <option value="tj">TJ</option>
-      </select>
+                        <ul className="hidden lg:flex gap-10 text-white text-[16px]">
+                            <Link to="/services"><p>{words.services}</p></Link>
+                            <Link to=""><p>{words.caseStudies}</p></Link>
+                            <Link to="/about"><p>{words.aboutUs}</p></Link>
+                            <Link to=""><p>{words.blog}</p></Link>
+                            <Link to=""><p>{words.contacts}</p></Link>
+                        </ul>
 
-      {/* ТЕМА + КНОПКА */}
-      <div className="hidden lg:flex items-center gap-3">
-        <Switch defaultChecked onChange={toggleTheme} />
-        <BlueButton enterence={"Talk to a human"} />
-      </div>
+        
+                        <select
+                            className="hidden lg:flex text-white bg-transparent"
+                            value={i18n.language}
+                            onChange={(e) => i18n.changeLanguage(e.target.value)}
+                        >
+                            <option value="en">EN</option>
+                            <option value="ru">RU</option>
+                            <option value="tj">TJ</option>
+                        </select>
 
-      {/* МЕНЮ ДЛЯ МОБИЛОК */}
-      <div className="lg:hidden">
-        <BasicMenu />
-      </div>
-    </div>
-  </nav>
+                      
+                        <div className="hidden lg:flex items-center gap-3">
+                            <Switch defaultChecked onChange={toggleTheme} />
+                            <BlueButton enterence={"Talk to a human"} />
+                        </div>
 
-  {/* КОНТЕНТ ПОД ШАПКОЙ */}
-  <div className="text-center pt-[140px]">
-    {renderHeaderContent()}
-  </div>
-</header>
+                        {/* МЕНЮ ДЛЯ МОБИЛОК */}
+                        <div className="lg:hidden">
+                            <BasicMenu />
+                        </div>
+                    </div>
+                </nav>
+
+                {/* КОНТЕНТ ПОД ШАПКОЙ */}
+                <div className="text-center pt-[60px]">
+                    {renderHeaderContent()}
+                </div>
+            </header>
 
             <main>
                 <Outlet />
