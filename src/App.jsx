@@ -1,13 +1,13 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import './App.css'
 import Layout from './Layout/Layout'
+import BlueSpinner from './Components/Loading'
 
-import Services from './pages/Service/Services'
-import InfoById from './pages/InfoById/InfoById'
-import About from './pages/About/About'
-import Home from './pages/Home/Home'
-
+const Services = React.lazy(() => import("./pages/Service/Services"))
+const InfoById = React.lazy(() => import("./pages/InfoById/InfoById"))
+const About = React.lazy(() => import("./pages/About/About"))
+const Home = React.lazy(() => import("./pages/Home/Home"))
 
 function App() {
 
@@ -18,20 +18,29 @@ function App() {
       children: [
         {
           path: '/',
-          element: <Home />,
+          element:
+            < Suspense fallback={<BlueSpinner />}>
+              <Home />
+            </Suspense>,
           index: true,
         },
         {
           path: '/services',
-          element: <Services />
+          element: <Suspense fallback={<BlueSpinner/>}>
+            <Services />
+          </Suspense>
         },
         {
           path: '/about',
-          element: <About />
+          element: <Suspense fallback={<BlueSpinner/>}>
+            <About />
+          </Suspense>
         },
         {
           path: '/infoById/:id',
-          element: <InfoById />
+          element: <Suspense fallback={<BlueSpinner/>}>
+            <InfoById />
+          </Suspense>
         }
       ]
     }

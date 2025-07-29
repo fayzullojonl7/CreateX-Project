@@ -10,7 +10,23 @@ import { ChartBarIcon, ComputerDesktopIcon, DevicePhoneMobileIcon, HomeIcon, Meg
 import { Switch } from 'antd'
 import useDarkSide from '../config/useDarkMode'
 import BasicMenu from '../Components/miniMenu'
+import { useTranslation } from 'react-i18next'
 const Layout = () => {
+    const { t, i18n } = useTranslation()
+    let words = {
+        home: t('home'),
+        services: t('services'),
+        caseStudies: t('caseStudies'),
+        aboutUs: t('aboutUs'),
+        blog: t('blog'),
+        contacts: t('contacts'),
+        best: t('best'),
+        seoMarketing: t('seo&marketing'),
+        SolutionsForYou: t('SolutionsForYou'),
+        GetAFreeAnalysis: t('GetAFreeAnalysis'),
+        PlayVideo: t('PlayVideo'),
+        SEOContentStrategy: t('SEOContentStrategy')
+    }
 
     let [, toggleTheme] = useDarkSide()
     const location = useLocation()
@@ -78,7 +94,7 @@ const Layout = () => {
                                     d="M9 5l7 7-7 7"
                                 />
                             </svg>
-                       
+
                             <p className='text-gray-600'>About</p>
                         </div>
                         <div className='text-center w-[700px]'>
@@ -107,14 +123,14 @@ const Layout = () => {
                 <div className='w-[100%] h-[550px] mt-[50px] lg:mt-[120px] flex flex-col justify-between items-center'>
                     <div className='flex flex-wrap '>
                         <div className='text-start'>
-                            <h1 className='text-[30px] lg:text-[55px] lf:text-[50px] font-bold lg:w-[600px] text-white'>Best <span className='text-[#645fed]'>SEO & Marketing</span> Solutions for You</h1>
+                            <h1 className='text-[30px] lg:text-[55px] lf:text-[50px] font-bold lg:w-[600px] text-white'>{words.best} <span className='text-[#645fed]'>{words.seoMarketing}</span> {words.SolutionsForYou}</h1>
                             <div className='flex gap-[20px] mt-[40px]'>
                                 <div className='hidden lg:flex'>
-                                    <TransparentBtn enterence="Get a free analysis" />
+                                    <TransparentBtn enterence={words.GetAFreeAnalysis} />
                                 </div>
                                 <div className='flex gap-[15px] items-center '>
                                     <RoundButton />
-                                    <p className='text-white font-bold'>Play video</p>
+                                    <p className='text-white font-bold'>{words.PlayVideo}</p>
                                 </div>
                             </div>
                         </div>
@@ -123,7 +139,7 @@ const Layout = () => {
                     <div className='hidden lg:flex'>
                         <div className='flex items-center gap-[10px] pr-[70px]'>
                             <ChartBarIcon className="w-6 h-6 text-[#7772F1]" />
-                            <p className='text-white'>SEO Content Strategy</p>
+                            <p className='text-white'>{words.SEOContentStrategy}</p>
                         </div>
                         <div className='flex items-center gap-[10px] px-[70px] lg:border-l-[1px] lg:border-r-[1px] border-[white]'>
                             <MegaphoneIcon className="w-6 h-6 text-[#7772F1]" />
@@ -141,28 +157,38 @@ const Layout = () => {
     return (
         <>
             <header className='px-[20px] py-[20px] lg:px-[150px] lg:py-[50px]'>
-                <nav className='flex justify-between items-center'>
+                <nav className='flex justify-between w-[350px] lg:w-[1000px] z-1000 items-center fixed top-[20px]'>
                     <Link to={''}>
                         <img className='w-[110px] h-[20px]' src={logo} alt="" />
                     </Link>
-                    <ul className='mr-[100px] text-[#FFFFFF] hidden lg:flex gap-[40px] text-[16px] '>
+                    <ul className='mr-[50px] text-[#FFFFFF] hidden lg:flex gap-[40px] text-[16px] '>
                         <Link to={'/services'}>
-                            <p>Services</p>
+                            <p>{words.services}</p>
                         </Link>
                         <Link to={''}>
-                            <p>Case Studies</p>
+                            <p>{words.caseStudies}</p>
                         </Link>
                         <Link to={'/about'}>
-                            <p>About Us</p>
+                            <p>{words.aboutUs}</p>
                         </Link>
                         <Link to={''}>
-                            <p>Blog</p>
+                            <p>{words.blog}</p>
                         </Link>
                         <Link to={''}>
-                            <p>Contacts</p>
+                            <p>{words.contacts}</p>
                         </Link>
                     </ul>
-                    <Switch defaultChecked onChange={toggleTheme} />
+                    <select
+                        className='text-white hidden lg:flex'
+                        value={i18n.language}
+                        onChange={(e) => i18n.changeLanguage(e.target.value)}>
+                        <option value="en">EN</option>
+                        <option value="ru">RU</option>
+                        <option value="tj">TJ</option>
+                    </select>
+                    <div className='hidden lg:flex'>
+                        <Switch defaultChecked onChange={toggleTheme} />
+                    </div>
                     <div className='hidden lg:flex'>
                         <BlueButton enterence={"Talk to a human"} />
                     </div>

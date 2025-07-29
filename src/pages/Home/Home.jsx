@@ -31,12 +31,15 @@ import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/effect-cards';
 import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 import './styles.css';
 import { EffectCoverflow, Pagination } from 'swiper/modules';
 import { EffectCards } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation } from 'swiper/modules';
 import Marquee from '../../Components/Marque'
 import PricingCard from '../../Components/PricingCard'
+import Swiper3Cards from '../../Components/Swiper3Cards'
 
 const Home = () => {
   const logos = [inDepthLogo, higherFitLogo, sentialLogo, happyHomeLogo, ForSaleLogo, sunsetSealityLogo]
@@ -290,7 +293,7 @@ const Home = () => {
         </section>
         <section className='px-[20px] flex lg:hidden py-[50px] overflow-hidden'>
           <Swiper
-          data-aos='zoom-in'
+            data-aos='zoom-in'
             effect={'cards'}
             grabCursor={true}
             modules={[EffectCards]}
@@ -306,18 +309,35 @@ const Home = () => {
           </Swiper>
         </section>
         <section className='hidden lg:flex justify-between px-[150px] py-[50px]'>
-         <div data-aos='zoom-in'>
-           <PricingCard  plan={"Basic"} price={"24"} />
-         </div>
-         <div data-aos='zoom-in'>
-           <PricingCard plan={"Basic"} price={"24"} />
-         </div>
           <div data-aos='zoom-in'>
-           <PricingCard plan={"Basic"} price={"24"} />
-         </div>
+            <PricingCard plan={"Basic"} price={"24"} />
+          </div>
+          <div data-aos='zoom-in'>
+            <PricingCard plan={"Basic"} price={"24"} />
+          </div>
+          <div data-aos='zoom-in'>
+            <PricingCard plan={"Basic"} price={"24"} />
+          </div>
+        </section>
+        <section className='px-[150px] py-[30px]'>
+          <h1 className='text-center text-[35px] font-bold'>
+            What our clients say
+          </h1>
+          <div className='Swiper3Bg h-[500px] flex items-center'>
+            <Swiper navigation={true} modules={[Navigation]} className="Swiper3">
+              <SwiperSlide className='Swiper3Slide'>
+                <Swiper3Cards />
+              </SwiperSlide>
+              <SwiperSlide className='Swiper3Slide'>
+                <Swiper3Cards />
+              </SwiperSlide>
+              <SwiperSlide className='Swiper3Slide'>
+                <Swiper3Cards />
+              </SwiperSlide>
+            </Swiper>
+          </div>
         </section>
       </section>
-
     </div>
   )
 }

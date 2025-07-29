@@ -3,7 +3,12 @@
   background-size: cover;
 }
 /* AOS - Animate On Scroll library styles */
-
+.Swiper3Bg{
+  /* background-size: cover; */
+  background-repeat: no-repeat;
+  background-image: url(./Media/Photo/bgForSwiper.png);
+  background-position: center;
+}
 /* Basic animation styles */
 [data-aos] {
   opacity: 0;
