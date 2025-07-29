@@ -304,7 +304,7 @@ const Home = () => {
             ))}
           </Swiper>
         </section>
-        <section className='hidden lg:flex justify-between px-[150px]'>
+        <section className='hidden lg:flex justify-between px-[150px] py-[50px]'>
           <PricingCard plan={"Basic"} price={"24"} />
           <PricingCard plan={"Basic"} price={"24"} />
           <PricingCard plan={"Basic"} price={"24"} />

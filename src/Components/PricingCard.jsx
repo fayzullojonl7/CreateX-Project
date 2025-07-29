@@ -1,18 +1,26 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const PricingCard = ({ plan, price, isActive }) => {
-  const bgColor = isActive ? 'bg-[#1E212C]' : 'bg-white dark:bg-[#1E212C]'
-  const titleColor = isActive ? 'text-white' : 'text-black dark:text-white'
-  const priceColor = isActive ? 'text-[#03CEA4]' : 'text-[#624DE3]'
-  const spanColor = isActive ? 'text-[#03CEA4]' : 'text-gray-500'
-  const iconColor = isActive ? 'text-[#03CEA4]' : 'text-[#7772F1]'
-  const textColor = isActive ? 'text-white' : 'text-black dark:text-white'
-  const buttonBg = isActive ? 'bg-[#624DE3] text-white' : 'bg-white dark:bg-gray-500 text-[#624DE3]'
-  const buttonHover = isActive ? '' : 'hover:bg-[#624DE3] hover:text-white'
+  const [isHovered, setIsHovered] = useState(false)
+
+  const isHighlighted = isActive || isHovered
+
+  const bgColor = isHighlighted ? 'bg-[#1E212C]' : 'bg-white dark:bg-[#1E212C]'
+  const titleColor = isHighlighted ? 'text-white' : 'text-black dark:text-white'
+  const priceColor = isHighlighted ? 'text-[#03CEA4]' : 'text-[#624DE3]'
+  const spanColor = isHighlighted ? 'text-[#03CEA4]' : 'text-gray-500'
+  const iconColor = isHighlighted ? 'text-[#03CEA4]' : 'text-[#7772F1]'
+  const textColor = isHighlighted ? 'text-white' : 'text-black dark:text-white'
+
+  const buttonBg = isActive
+    ? 'bg-[#624DE3] text-white'
+    : 'bg-white dark:bg-gray-500 text-[#624DE3] hover:bg-[#624DE3] hover:text-white'
 
   return (
     <div
-      className={`w-[100%] h-[100%] lg:w-[320px] lg:h-[536px] ${bgColor} transition-all duration-300 rounded-xl shadow-md flex flex-col justify-between px-[30px] lg:px-[60px] py-[50px]`}
+      className={`w-full h-full lg:w-[320px] lg:h-[536px] ${bgColor} transition-all duration-300 rounded-xl shadow-md flex flex-col justify-between px-[30px] lg:px-[60px] py-[50px]`}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
     >
       <div>
         <h1 className={`text-center text-[30px] font-bold ${titleColor}`}>{plan}</h1>
@@ -44,10 +52,7 @@ const PricingCard = ({ plan, price, isActive }) => {
             </li>
           ))}
 
-          {[
-            'Strategy & Marketing',
-            'Information Technology'
-          ].map((item, idx) => (
+          {['Strategy & Marketing', 'Information Technology'].map((item, idx) => (
             <li key={idx} className="flex items-center gap-2 text-[#9A9CA5]">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -65,9 +70,7 @@ const PricingCard = ({ plan, price, isActive }) => {
         </ul>
       </div>
 
-      <button
-        className={`mt-8 py-3 w-full rounded-md border border-[#624DE3] font-medium transition ${buttonBg} ${buttonHover}`}
-      >
+      <button className={`mt-8 py-3 w-full rounded-md border border-[#624DE3] font-medium transition ${buttonBg}`}>
         Choose plan
       </button>
     </div>
