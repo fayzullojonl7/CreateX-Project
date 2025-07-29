@@ -210,24 +210,24 @@ const Home = () => {
               }}
               pagination={true}
               modules={[EffectCoverflow, Pagination]}
-              className="mySwiper"
+              className="Swiper1"
             >
-              <SwiperSlide>
+              <SwiperSlide className='Swiper1Slide'>
                 <HoverSquare logo={sentialLogo} title={"Charity organisation"} description={"Createx SEO Agency helped National Inc. increase their MQL to SQL conversion rate by 300%."} />
               </SwiperSlide>
-              <SwiperSlide>
+              <SwiperSlide className='Swiper1Slide'>
                 <HoverSquare backgroundImage={HoverSquareBg} logo={ForSaleLogo} title={"Oil and natural resources"} description={"With an advanced A/B testing and usability analysis, Createx SEO Agency helps Del Mar see a 400% increase in conversion rate."} />
               </SwiperSlide>
-              <SwiperSlide>
+              <SwiperSlide className='Swiper1Slide'>
                 <HoverSquare logo={sunsetSealityLogo} title={"Personal care"} description={"We helped Sunset company break through a noisy industry and better understand their buyer's journey."} />
               </SwiperSlide>
-              <SwiperSlide>
+              <SwiperSlide className='Swiper1Slide'>
                 <HoverSquare logo={sentialLogo} title={"Charity organisation"} description={"Createx SEO Agency helped National Inc. increase their MQL to SQL conversion rate by 300%."} />
               </SwiperSlide>
-              <SwiperSlide>
+              <SwiperSlide className='Swiper1Slide'>
                 <HoverSquare backgroundImage={HoverSquareBg} logo={ForSaleLogo} title={"Oil and natural resources"} description={"With an advanced A/B testing and usability analysis, Createx SEO Agency helps Del Mar see a 400% increase in conversion rate."} />
               </SwiperSlide>
-              <SwiperSlide>
+              <SwiperSlide className='Swiper1Slide'>
                 <HoverSquare logo={sunsetSealityLogo} title={"Personal care"} description={"We helped Sunset company break through a noisy industry and better understand their buyer's journey."} />
               </SwiperSlide>
             </Swiper>
@@ -294,10 +294,10 @@ const Home = () => {
             effect={'cards'}
             grabCursor={true}
             modules={[EffectCards]}
-            className="mySwiper"
+            className="Swiper2"
           >
             {plans.map(({ plan, price }, idx) => (
-              <SwiperSlide key={idx}>
+              <SwiperSlide className='Swiper2Slide' key={idx}>
                 {({ isActive }) => (
                   <PricingCard plan={plan} price={price} isActive={isActive} />
                 )}
