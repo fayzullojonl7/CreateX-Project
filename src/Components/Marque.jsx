@@ -17,7 +17,7 @@ const Marquee = ({ logos }) => {
                         key={index}
                         src={logo}
                         alt={`logo-${index}`}
-                        className="h-8 sm:h-14 md:h-16 w-auto object-contain"
+                        className="h-[60px] sm:h-14 md:h-16 w-auto object-contain"
                     />
                 ))}
             </div>

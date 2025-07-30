@@ -41,6 +41,7 @@ export default function BasicMenu() {
                 anchorEl={anchorEl}
                 open={open}
                 onClose={handleClose}
+                color='black'
                 slotProps={{
                     list: {
                         'aria-labelledby': 'basic-button',
