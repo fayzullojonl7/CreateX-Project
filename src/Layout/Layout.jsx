@@ -25,7 +25,7 @@ const Layout = () => {
         SolutionsForYou: t('SolutionsForYou'),
         GetAFreeAnalysis: t('GetAFreeAnalysis'),
         PlayVideo: t('PlayVideo'),
-        SEOContentStrategy: t('SEOContentStrategy')
+        SEOContentStrategy: t('SEOContentStrategy'),
     }
 
     let [, toggleTheme] = useDarkSide()
@@ -120,8 +120,8 @@ const Layout = () => {
             )
         } else {
             return (
-                <div className='w-[100%] h-[550px] lg:mt-[120px] flex flex-col justify-between items-center'>
-                    <div className='flex flex-wrap '>
+                <div className='w-[100%] py-[20px] lg:mt-[120px] flex flex-col justify-between items-center'>
+                    <div className='flex py-[20px] flex-wrap '>
                         <div className='text-start'>
                             <h1 className='text-[30px] lg:text-[55px] lf:text-[50px] font-bold lg:w-[600px] text-white'>{words.best} <span className='text-[#645fed]'>{words.seoMarketing}</span> {words.SolutionsForYou}</h1>
                             <div className='flex gap-[20px] mt-[40px]'>
@@ -137,7 +137,8 @@ const Layout = () => {
                         <img src={HeroN1} className='w-[350px] mt-[30px]' alt="" />
                     </div>
                     <div className='hidden lg:flex'>
-                        <div className='flex items-center gap-[10px] pr-[70px]'>
+                        <div className='flex items-
+                         center gap-[10px] pr-[70px]'>
                             <ChartBarIcon className="w-6 h-6 text-[#7772F1]" />
                             <p className='text-white'>{words.SEOContentStrategy}</p>
                         </div>
@@ -156,7 +157,7 @@ const Layout = () => {
     }
     return (
         <>
-            <header className="px-5 lg:px-[150px] lg:py-[50px]">
+            <header className="px-5 lg:px-[150px] lg:py-[10px]">
                 <nav className="fixed left-0 right-0 z-[1000]">
                     <div className="max-w-[1000px] mx-auto flex items-center justify-between px-4 py-3 bg-[#1E212C]/80 backdrop-blur-md lg:rounded-2xl shadow-lg transition-all duration-300">
 
@@ -171,8 +172,6 @@ const Layout = () => {
                             <Link to=""><p>{words.blog}</p></Link>
                             <Link to=""><p>{words.contacts}</p></Link>
                         </ul>
-
-        
                         <select
                             className="hidden lg:flex text-white bg-transparent"
                             value={i18n.language}
@@ -182,26 +181,19 @@ const Layout = () => {
                             <option value="ru">RU</option>
                             <option value="tj">TJ</option>
                         </select>
-
-                      
                         <div className="hidden lg:flex items-center gap-3">
                             <Switch defaultChecked onChange={toggleTheme} />
                             <BlueButton enterence={"Talk to a human"} />
                         </div>
-
-                        {/* МЕНЮ ДЛЯ МОБИЛОК */}
                         <div className="lg:hidden">
                             <BasicMenu />
                         </div>
                     </div>
                 </nav>
-
-                {/* КОНТЕНТ ПОД ШАПКОЙ */}
-                <div className="text-center pt-[60px]">
+                <div className="text-center pt-[60px] lg:pt-[30px]">
                     {renderHeaderContent()}
                 </div>
             </header>
-
             <main>
                 <Outlet />
             </main>
@@ -210,7 +202,6 @@ const Layout = () => {
                     Car Configurator © 2023
                 </h1>
             </footer>
-
         </>
     )
 }

@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 
 const ExpandableDiv = ({ title, description }) => {
     const [isExpanded, setIsExpanded] = useState(false);
+    const contentRef = useRef(null);
 
     const toggleExpand = () => {
         setIsExpanded(prev => !prev);
@@ -18,8 +19,11 @@ const ExpandableDiv = ({ title, description }) => {
                 <span className='text-[20px] dark:text-[white] text-[#1E212C] font-bold'>{title}</span>
             </div>
             <div
-                className={`overflow-hidden transition-all duration-500 transform ${isExpanded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-[-20px]'}`}>
-                {isExpanded && <p className="p-2 text-[#787A80]  dark:text-gray-400">{description}</p>}
+                ref={contentRef}
+                className={`transition-all duration-500 ease-in-out overflow-hidden
+                ${isExpanded ? 'max-h-[500px] opacity-100 translate-y-0' : 'max-h-0 opacity-0 -translate-y-2'}
+                transform`}>
+                <p className="p-2 text-[#787A80] dark:text-gray-400">{description}</p>
             </div>
         </div>
     );
